@@ -8,12 +8,18 @@
 }
 
 body {
-  padding: 1rem;
+  /* padding: 1rem; */
   font-weight: 600;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+@layer base {
+  h1 {
+    @apply font-extrabold text-2xl;
   }
 }
