@@ -2,6 +2,16 @@ import Link from "next/link";
 import React from "react";
 import { sort } from "fast-sort";
 
+import {
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
+
 interface User {
   id: number;
   name: string;
@@ -23,26 +33,32 @@ const UserTable = async ({ sortOrder }: Props) => {
     sortOrder === "email" ? (u) => u.email : (u) => u.name
   );
   return (
-    <table className="table">
-      <thead>
-        <tr>
-          <th>
-            <Link href="/users?sortOrder=name">Name</Link>
-          </th>
-          <th>
-            <Link href="/users?sortOrder=email">Email</Link>
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        {sortedUsers.map((user) => (
-          <tr key={user.id}>
-            <td>{user.name}</td>
-            <td>{user.email}</td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
+    <>
+      <Table>
+        <TableCaption>A list of your users.</TableCaption>
+        <TableHeader>
+          <TableRow>
+            <TableHead className="">
+              {" "}
+              <Link href="/users?sortOrder=name">Name</Link>
+            </TableHead>
+            <TableHead>Status</TableHead>
+            <TableHead>
+              <Link href="/users?sortOrder=email">Email</Link>
+            </TableHead>
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          {sortedUsers.map((user) => (
+            <TableRow key={user.id}>
+              <TableCell className="font-medium">{user.name}</TableCell>
+              <TableCell>Active</TableCell>
+              <TableCell className="font-medium">{user.email}</TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </>
   );
 };
 
