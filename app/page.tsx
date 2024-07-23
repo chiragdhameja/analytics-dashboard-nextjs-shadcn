@@ -14,7 +14,7 @@ export default function Home() {
         enableSystem
         disableTransitionOnChange
       >
-        <h1 className="">Website Title...</h1>
+        <h1 className="">Dashboards</h1>
         <div className="flex p-5 space-x-5">
           <Areachart />
           <PieChar />
