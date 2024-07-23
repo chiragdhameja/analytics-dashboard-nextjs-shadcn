@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { TrendingUp } from "lucide-react";
-import { Area, AreaChart, CartesianGrid, XAxis } from "recharts";
+import { Area, AreaChart, CartesianGrid, XAxis, YAxis } from "recharts";
 
 import {
   Card,
@@ -45,7 +45,9 @@ export function Areachart() {
   return (
     <Card className="w-1/2">
       <CardHeader>
-        <CardTitle className="text-lg">Area Chart - Stacked Expanded</CardTitle>
+        <CardTitle className="text-lg">
+          Area Chart - Views by platform
+        </CardTitle>
         <CardDescription>
           Showing total visitors for the last 6 months
         </CardDescription>
@@ -68,6 +70,7 @@ export function Areachart() {
               tickMargin={8}
               tickFormatter={(value) => value.slice(0, 3)}
             />
+            <YAxis axisLine={true} tickLine={true} tickMargin={8} />
             <ChartTooltip
               cursor={true}
               content={<ChartTooltipContent indicator="dot" />}

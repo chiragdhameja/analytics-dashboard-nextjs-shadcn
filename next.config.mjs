@@ -1,4 +1,13 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+  async rewrites() {
+    return [
+      {
+        source: "/api/:path*",
+        destination: "/app/api/:path*", // Proxy to your custom API routes
+      },
+    ];
+  },
+};
 
 export default nextConfig;

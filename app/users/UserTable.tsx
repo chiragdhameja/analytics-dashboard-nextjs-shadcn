@@ -42,7 +42,7 @@ const UserTable = async ({ sortOrder }: Props) => {
               {" "}
               <Link href="/users?sortOrder=name">Name</Link>
             </TableHead>
-            <TableHead>Status</TableHead>
+
             <TableHead>
               <Link href="/users?sortOrder=email">Email</Link>
             </TableHead>
@@ -52,7 +52,7 @@ const UserTable = async ({ sortOrder }: Props) => {
           {sortedUsers.map((user) => (
             <TableRow key={user.id}>
               <TableCell className="font-medium">{user.name}</TableCell>
-              <TableCell>Active</TableCell>
+
               <TableCell className="font-medium">{user.email}</TableCell>
             </TableRow>
           ))}
