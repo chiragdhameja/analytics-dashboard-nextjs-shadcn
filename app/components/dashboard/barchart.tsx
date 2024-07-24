@@ -92,7 +92,9 @@ export function BarChartComponent() {
   return (
     <Card className="w-1/2">
       <CardHeader>
-        <CardTitle className="text-lg">Bar Chart - Browser data</CardTitle>
+        <CardTitle className="text-lg">
+          Bar Chart - Browser re-direction data
+        </CardTitle>
         <CardDescription>January - June 2024</CardDescription>
       </CardHeader>
       <CardContent>
@@ -121,7 +123,6 @@ export function BarChartComponent() {
                 strokeWidth={2}
                 radius={8}
                 shape={<CustomBar />}
-                activeIndex={2}
                 activeBar={({ ...props }) => (
                   <Rectangle
                     {...props}
