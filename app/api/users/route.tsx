@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 
-export function GET(request: NextResponse) {
-  // To prevent cacheing pass 'request: NextResponse' even though request is not being used
+export function GET(request: NextRequest) {
+  // No need to use request here
   return NextResponse.json([
     { id: 1, name: "Chirag" },
     { id: 2, name: "Nidha" },
@@ -11,11 +11,12 @@ export function GET(request: NextResponse) {
 export async function POST(request: NextRequest) {
   const body = await request.json();
 
-  // Validate
-  if (!body.name)
-    // if invalid return 400
+  // Validate the request body
+  if (!body.name) {
+    // If invalid, return 400
     return NextResponse.json({ error: "Name is required" }, { status: 400 });
+  }
 
-  // else, return data created
+  // If valid, return the created data
   return NextResponse.json({ id: 1, name: body.name }, { status: 201 });
 }
