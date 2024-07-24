@@ -21,7 +21,7 @@ const NavBar = () => {
               width={30}
               height={30}
             />
-            <p className="ml-2">Data Analyser</p>
+            <p className="ml-2">DataDash</p>
           </Link>
         </div>
         <div className="flex w-1/2 justify-end">
