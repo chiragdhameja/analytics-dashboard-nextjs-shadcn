@@ -8,7 +8,7 @@ const Photos = ({ params: { id } }: Props) => {
   return (
     <div>
       <h1>Photos</h1>
-      <p>'photos'</p>
+      <p>"photos"</p>
     </div>
   );
 };

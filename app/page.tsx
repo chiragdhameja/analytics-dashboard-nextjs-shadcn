@@ -16,7 +16,7 @@ export default function Home() {
         enableSystem
         disableTransitionOnChange
       >
-        <h1 className="">Dashboards</h1>
+        <h1 className="ml-8">Dashboards</h1>
         <div className="flex flex-col w-full">
           <div className="flex flex-row p-5 space-x-5">
             <Areachart />

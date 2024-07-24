@@ -12,7 +12,7 @@ const NavBar = () => {
       enableSystem
       disableTransitionOnChange
     >
-      <div className="flex flex-row w-screen p-2">
+      <div className="flex flex-row w-11/12 ml-16 mr-16 p-2">
         <div className="flex w-1/2">
           <Link href={"/"} className="flex items-center">
             <Image
@@ -21,7 +21,7 @@ const NavBar = () => {
               width={30}
               height={30}
             />
-            <p className="ml-2">Data Analyser</p>
+            <p className="ml-2">DataDash</p>
           </Link>
         </div>
         <div className="flex w-1/2 justify-end">
@@ -29,13 +29,13 @@ const NavBar = () => {
             <ModeToggle />
             <Link
               href={"/users"}
-              className="bg-inherit hover:bg-slate-400 p-1.5 border border-slate-400"
+              className="bg-inherit hover:bg-slate-400 p-1.5 border rounded-md border-slate-400"
             >
               Users
             </Link>
             <Link
               href={"/products"}
-              className="bg-inherit hover:bg-slate-400 p-1.5 border border-slate-400"
+              className="bg-inherit hover:bg-slate-400 p-1.5 border rounded-md border-slate-400"
             >
               Products
             </Link>

@@ -1,10 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
 
-export function GET(
-  request: NextResponse,
-  { params }: { params: { id: number } }
+export async function GET(
+  request: NextRequest,
+  { params }: { params: { id: string } } // id should be string
 ) {
-  if (params.id > 10) {
+  const id = parseInt(params.id, 10); // Convert id to number
+  if (id > 10) {
     return NextResponse.json({ error: "User not found!" }, { status: 404 });
   }
   return NextResponse.json({ params });
@@ -12,32 +13,34 @@ export function GET(
 
 export async function PUT(
   request: NextRequest,
-  { params }: { params: { id: number } }
+  { params }: { params: { id: string } } // id should be string
 ) {
-  // Validate the req body
   const body = await request.json();
-  // if invalid, return 400
-  if (!body.name)
-    return NextResponse.json({ error: "Name is required" }, { status: 400 });
 
-  // if user invalid, return 404
-  if (params.id > 10)
+  if (!body.name) {
+    return NextResponse.json({ error: "Name is required" }, { status: 400 });
+  }
+
+  const id = parseInt(params.id, 10); // Convert id to number
+
+  if (id > 10) {
     return NextResponse.json({ error: "User not found!" }, { status: 404 });
-  // Fetch user with given id
-  // update the user
-  // Return the updated user
-  return NextResponse.json({ id: 1, name: body.name });
+  }
+
+  // Fetch user with given id and update the user
+  return NextResponse.json({ id, name: body.name });
 }
 
-export function DELETE(
+export async function DELETE(
   request: NextRequest,
-  { params }: { params: { id: number } }
+  { params }: { params: { id: string } } // id should be string
 ) {
-  // Validate the user id
-  // if invalid, return 404
-  if (params.id > 10)
-    return NextResponse.json({ error: "User not found!" }, { status: 404 });
+  const id = parseInt(params.id, 10); // Convert id to number
 
-  // delete user
+  if (id > 10) {
+    return NextResponse.json({ error: "User not found!" }, { status: 404 });
+  }
+
+  // Delete user with given id
   return NextResponse.json({});
 }
