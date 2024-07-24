@@ -1,5 +1,8 @@
-/** @type {import('next').NextConfig} */
+/** @type {import("next").NextConfig} */
 const nextConfig = {
+  images: {
+    domains: ["i.imgur.com"], // Add the domains you need
+  },
   async rewrites() {
     return [
       {

@@ -1,5 +1,6 @@
 import { ThemeProvider } from "@/components/theme-provider";
 import { ModeToggle } from "@/components/ui/modetoggle";
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
@@ -14,7 +15,12 @@ const NavBar = () => {
       <div className="flex flex-row w-screen p-2">
         <div className="flex w-1/2">
           <Link href={"/"} className="flex items-center">
-            <img src="https://i.imgur.com/DefTjZ9.png" className="w-10 h-10" />
+            <Image
+              src="https://i.imgur.com/DefTjZ9.png"
+              alt=""
+              width={30}
+              height={30}
+            />
             <p className="ml-2">Data Analyser</p>
           </Link>
         </div>

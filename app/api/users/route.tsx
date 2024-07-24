@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 
 export function GET(request: NextResponse) {
-  // To prevent cacheing pass 'request: NextResponse' even though request is not being used
+  // To prevent cacheing pass "request: NextResponse" even though request is not being used
   return NextResponse.json([
     { id: 1, name: "Chirag" },
     { id: 2, name: "Nidha" },
